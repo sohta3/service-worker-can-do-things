@@ -3,7 +3,7 @@ if ('serviceWorker' in navigator) {
  navigator.serviceWorker.register('sw.js').then(function(reg) {
    console.log(':^)', reg);
    navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
-     reg.pushManager.subscribe({
+     serviceWorkerRegistration.pushManager.subscribe({
        userVisibleOnly: true
      }).then(function(sub) {
        console.log('endpoint:',  sub.endpoint);
